@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Flip with Random Cards</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+    .container {
+      text-align: center;
+    }
+    .card {
+      width: 200px;
+      height: 150px;
+      perspective: 1000px;
+      margin: 20px auto;
+    }
+    .card-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.8s;
+    }
+    .card.flipped .card-inner {
+      transform: rotateY(180deg);
+    }
+    .card-side {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      backface-visibility: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      font-weight: bold;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+    }
+    .card-front {
+      background-color: #fff;
+    }
+    .card-back {
+      background-color: #ffcbcb;
+      transform: rotateY(180deg);
+    }
+    .button {
+      padding: 10px 20px;
+      margin-top: 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card" id="card">
+      <div class="card-inner">
+        <div class="card-side card-front" id="cardFront">Sheep</div>
+        <div class="card-side card-back" id="cardBack">Baaa</div>
+      </div>
+    </div>
+    <button class="button" id="flipButton">Flip Card</button>
+    <button class="button" id="newCardButton">New Random Card</button>
+  </div>
+
+  <script>
+    // List of cards with front and back text
+    const cards = [
+      { front: "Sheep", back: "Baaa" },
+      { front: "Cow", back: "Mooo" },
+      { front: "Duck", back: "Quack" },
+      { front: "Dog", back: "Woof" },
+      { front: "Cat", back: "Meow" }
+    ];
+
+    const cardElement = document.getElementById('card');
+    const cardFront = document.getElementById('cardFront');
+    const cardBack = document.getElementById('cardBack');
+    const flipButton = document.getElementById('flipButton');
+    const newCardButton = document.getElementById('newCardButton');
+
+    // Function to set a new random card
+    function setRandomCard() {
+      const randomCard = cards[Math.floor(Math.random() * cards.length)];
+      cardFront.textContent = randomCard.front;
+      cardBack.textContent = randomCard.back;
+      cardElement.classList.remove('flipped'); // Reset the card to its front side
+    }
+
+    // Flip the card on button click
+    flipButton.addEventListener('click', () => {
+      cardElement.classList.toggle('flipped');
+    });
+
+    // Generate a new random card
+    newCardButton.addEventListener('click', setRandomCard);
+
+    // Initialize with a random card
+    setRandomCard();
+  </script>
+</body>
+</html>
