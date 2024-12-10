@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Card Flip with Random Cards</title>
+  <title>Jiujitsu Technique Trainer</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -65,28 +65,58 @@
     .button:hover {
       background-color: #0056b3;
     }
+    .checkbox-container {
+      margin: 20px 0;
+      text-align: left;
+      display: inline-block;
+    }
+    .checkbox-container label {
+      display: block;
+      margin-bottom: 5px;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="card" id="card">
       <div class="card-inner">
-        <div class="card-side card-front" id="cardFront">Sheep</div>
-        <div class="card-side card-back" id="cardBack">Baaa</div>
+        <div class="card-side card-front" id="cardFront">Guard Pass</div>
+        <div class="card-side card-back" id="cardBack">Pass the half guard</div>
       </div>
     </div>
     <button class="button" id="flipButton">Flip Card</button>
     <button class="button" id="newCardButton">New Random Card</button>
+    <div class="checkbox-container" id="checkboxContainer">
+      <label><input type="checkbox" value="1" checked> Theme 1</label>
+      <label><input type="checkbox" value="2" checked> Theme 2</label>
+      <label><input type="checkbox" value="3" checked> Theme 3</label>
+      <label><input type="checkbox" value="4" checked> Theme 4</label>
+      <label><input type="checkbox" value="5" checked> Theme 5</label>
+      <label><input type="checkbox" value="6" checked> Theme 6</label>
+      <label><input type="checkbox" value="7" checked> Theme 7</label>
+      <label><input type="checkbox" value="8" checked> Theme 8</label>
+      <label><input type="checkbox" value="9" checked> Theme 9</label>
+      <label><input type="checkbox" value="10" checked> Theme 10</label>
+      <label><input type="checkbox" value="11" checked> Theme 11</label>
+      <label><input type="checkbox" value="12" checked> Theme 12</label>
+    </div>
   </div>
 
   <script>
-    // List of cards with front and back text
+    // List of cards with themes
     const cards = [
-      { front: "Sheep", back: "Baaa" },
-      { front: "Cow", back: "Mooo" },
-      { front: "Duck", back: "Quack" },
-      { front: "Dog", back: "Woof" },
-      { front: "Cat", back: "Meow" }
+      { front: "Guard Pass", back: "Pass the half guard", theme: 1 },
+      { front: "Armbar", back: "From mount position", theme: 2 },
+      { front: "Triangle Choke", back: "From guard position", theme: 3 },
+      { front: "Kimura", back: "From side control", theme: 4 },
+      { front: "Rear Naked Choke", back: "From back mount", theme: 5 },
+      { front: "Sweep", back: "From closed guard", theme: 6 },
+      { front: "Takedown", back: "Single-leg takedown", theme: 7 },
+      { front: "Leg Lock", back: "From 50/50 guard", theme: 8 },
+      { front: "Escape", back: "From mount position", theme: 9 },
+      { front: "Omoplata", back: "Submission from guard", theme: 10 },
+      { front: "Cross Collar Choke", back: "From closed guard", theme: 11 },
+      { front: "D'Arce Choke", back: "From side control", theme: 12 }
     ];
 
     const cardElement = document.getElementById('card');
@@ -94,10 +124,28 @@
     const cardBack = document.getElementById('cardBack');
     const flipButton = document.getElementById('flipButton');
     const newCardButton = document.getElementById('newCardButton');
+    const checkboxContainer = document.getElementById('checkboxContainer');
 
-    // Function to set a new random card
+    // Get selected themes
+    function getSelectedThemes() {
+      const checkboxes = checkboxContainer.querySelectorAll('input[type="checkbox"]:checked');
+      return Array.from(checkboxes).map(cb => parseInt(cb.value));
+    }
+
+    // Filter cards by selected themes
+    function getFilteredCards() {
+      const selectedThemes = getSelectedThemes();
+      return cards.filter(card => selectedThemes.includes(card.theme));
+    }
+
+    // Set a new random card
     function setRandomCard() {
-      const randomCard = cards[Math.floor(Math.random() * cards.length)];
+      const filteredCards = getFilteredCards();
+      if (filteredCards.length === 0) {
+        alert("No themes selected. Please select at least one theme.");
+        return;
+      }
+      const randomCard = filteredCards[Math.floor(Math.random() * filteredCards.length)];
       cardFront.textContent = randomCard.front;
       cardBack.textContent = randomCard.back;
       cardElement.classList.remove('flipped'); // Reset the card to its front side
