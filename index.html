@@ -105,18 +105,102 @@
   <script>
     // List of cards with themes
     const cards = [
-      { front: "Guard Pass", back: "Pass the half guard", theme: 1 },
-      { front: "Armbar", back: "From mount position", theme: 2 },
-      { front: "Triangle Choke", back: "From guard position", theme: 3 },
-      { front: "Kimura", back: "From side control", theme: 4 },
-      { front: "Rear Naked Choke", back: "From back mount", theme: 5 },
-      { front: "Sweep", back: "From closed guard", theme: 6 },
-      { front: "Takedown", back: "Single-leg takedown", theme: 7 },
-      { front: "Leg Lock", back: "From 50/50 guard", theme: 8 },
-      { front: "Escape", back: "From mount position", theme: 9 },
-      { front: "Omoplata", back: "Submission from guard", theme: 10 },
-      { front: "Cross Collar Choke", back: "From closed guard", theme: 11 },
-      { front: "D'Arce Choke", back: "From side control", theme: 12 }
+      // Thema 1 kata Tori
+      { front: "Kata 1e van 1e, Tori", back: "", theme: 1 },
+      { front: "Kata 2e van 1e, Tori", back: "", theme: 1 },
+      { front: "Kata 3e van 1e, Tori", back: "", theme: 1 },
+      { front: "Kata 4e van 1e, Tori", back: "", theme: 1 },
+      { front: "Kata 5e van 1e, Tori", back: "", theme: 1 },
+       
+      { front: "Kata 1e van 2e, Tori", back: "", theme: 1 },
+      { front: "Kata 2e van 2e, Tori", back: "", theme: 1 },
+      { front: "Kata 3e van 2e, Tori", back: "", theme: 1 },
+      { front: "Kata 4e van 2e, Tori", back: "", theme: 1 },
+      { front: "Kata 5e van 2e, Tori", back: "", theme: 1 },
+       
+      { front: "Kata 1e van 3e, Tori", back: "Links voor parate houding", theme: 1 },
+      { front: "Kata 2e van 3e, Tori", back: "Links voor parate houding", theme: 1 },
+      { front: "Kata 3e van 3e, Tori", back: "Links voor parate houding", theme: 1 },
+      { front: "Kata 4e van 3e, Tori", back: "Links voor parate houding", theme: 1 },
+      { front: "Kata 5e van 3e, Tori", back: "Rechts voor parate houding", theme: 1 },
+       
+      { front: "Kata 1e van 4e, Tori", back: "Links voor parate houding", theme: 1 },
+      { front: "Kata 2e van 4e, Tori", back: "Links voor parate houding", theme: 1 },
+      { front: "Kata 3e van 4e, Tori", back: "Links voor parate houding", theme: 1 },
+      { front: "Kata 4e van 4e, Tori", back: "Links voor parate houding", theme: 1 },
+      { front: "Kata 5e van 4e, Tori", back: "Rechts voor parate houding", theme: 1 },
+      //Thema 1 Kata Uke
+      { front: "Kata 1e van 1e, Uke", back: "Rechts voor, beide handen pols pakken. Stappen: Links, rechts, tsugi ashi.", theme: 1 },
+      { front: "Kata 2e van 1e, Uke", back: "Rechts voor, rechter hand kruislings pak pakken. Stappen: Links, rechts, tsugi ashi.", theme: 1 },
+      { front: "Kata 3e van 1e, Uke", back: "Rechts voor, poging wurging beide handen. Stappen: Links, rechts, tsugi ashi.", theme: 1 },
+      { front: "Kata 4e van 1e, Uke", back: "Links voor, Wachten tot uke staat, stap naar links en pak met beide handen schuin van zijkant", theme: 1 },
+      { front: "Kata 5e van 1e, Uke", back: "Duw uke opzij, uit pas, kruislings pas, uit pas.", theme: 1 },
+ 
+      { front: "Kata 1e van 2e, Uke", back: "Rechts voor, omvatting van voren. Stappen: Links, rechts, tsugi ashi.", theme: 1 },
+      { front: "Kata 2e van 2e, Uke", back: "Links voor, omvatting van voren. Stappen: Links, rechts, links.", theme: 1 },
+      { front: "Kata 3e van 2e, Uke", back: "Kom van schuin opzij aanlopen en duw met links hoofd omlaag en pak met rechts om de nek heen en duw naar beneden", theme: 1 },
+      { front: "Kata 4e van 2e, Uke", back: "Op elkaar aflopen, pak met rechts achter de nek om omlaag te duwen, wurg met links.", theme: 1 },
+      { front: "Kata 5e van 2e, Uke", back: "Rechts voor, linker hand op de schouder, schuif rechter hand voor de nek voor wurging, loop naar achter met links eerst een stap.", theme: 1 },
+ 
+      { front: "Kata 1e van 3e, Uke", back: "Links voor parate houding, Rechts oi-tsuki naar hoofd.", theme: 1 },
+      { front: "Kata 2e van 3e, Uke", back: "Links voor parate houding, Rechts Gyaku-tsuki naar buik.", theme: 1 },
+      { front: "Kata 3e van 3e, Uke", back: "Links voor parate houding, Rechts Gyaku-shuto naar nek.", theme: 1 },
+      { front: "Kata 4e van 3e, Uke", back: "Links voor parate houding, rechts mai geri naar buik.", theme: 1 },
+      { front: "Kata 5e van 3e, Uke", back: "Links voor parate houding, rechts mai washi geri naar buik.", theme: 1 },
+ 
+      { front: "Kata 1e van 4e, Uke", back: "Verrassings aanval, oi-mes steek van boven naar hoofd", theme: 1 },
+      { front: "Kata 2e van 4e, Uke", back: "Links voor parate houding, gyaku-mes steek naar buik", theme: 1 },
+      { front: "Kata 3e van 4e, Uke", back: "Links voor parate houding, oi-mes uraken", theme: 1 },
+      { front: "Kata 4e van 4e, Uke", back: "Links voor parate houding, oi-stokslag van boven", theme: 1 },
+      { front: "Kata 5e van 4e, Uke", back: "Links voor parate houding, gyaku-stokslag 45 graden", theme: 1 },
+//Thema 2      
+      {front: "Demonstreer Atemi-Waza, op een door uke vastgehouden body-shield", back: "Demonsteer met impact en vloeiend de bijvoorbeeld de volgende technieken: (gyaku) tsuki, boeren hoek, uraken, taiso, haito, shuto, nukite, opstoot, tatsui, zadelhandstoot, empi meawashi, empi age, empi oushiro, empi otoshi, low kick, mae geri, mea washi geri, yoko geri, kin geri, hiza geri", theme: 2},
+		  {front: "Demonsteer verdedigingen met Uke-Waza, verplaatsingen en Atemi-Waza tegen verschillende aanvallen", back: "Demonsteer verdedigingen met bijpassende counters, bijvoorbeeld: Tetsui, gekruisd blok hoog, maeswashi geri, maewashi geri in de knie; Shuto, kake uke, knietje, empi otoshi; Uraken, morote uke, uraken in zij, spinning backfist, yoko geri; Boeren hoek, nagasi hiji uke (meteen met elleboog op de borst), stoot in maag, yoko geri; Middel stoot, gedan barai met rechts binnen uitkomen; mae geri, gedan barai met rechts buiten uitkomen; Hiza geri, taiso uke; Middel stoot, otoshi uke (vallend blok); Hoge stoot, nagasi uke; taiso, age (opwaards vallend blok), ", theme: 2},
+		  {front: "Nieuw aan te leren technieken thema 2: demonstreer Mea atema tsuki", back: "Kopstoot voorwaarts Aanval: Pakking bij de keel, verdediging: voorwaartse kopstoot, afmaken: osoto gari", theme: 2},
+		  {front: "Nieuw aan te leren technieken thema 2: demonstreer Uchiro Atema Tsuki", back: "Kopstoot achterwaarts, aanval: omvatting van achteren, verdediging: Kopstoot naar achteren, afmaken: ogoshi", theme: 2},
+		  {front: "Nieuw aan te leren technieken thema 2: demonstreer Otoshi Uke", back: "Vallend blok, aanval: stoot naar borst, verdediging: vallend blok, afmaken: o utchi gari (binnenwaartse beenworp)", theme: 2},
+		  {front: "Nieuw aan te leren technieken thema 2: demonsteer Empi Uke", back: "Empi uke, aanval: boeren hoek, verdediging: empi uke, afmaken: stoot in de maag, knie in de maag, windmolen worp", theme: 2},
+//Thema 3
+      { front: "Thema 3, Meervoudigheid Worpen", back: "Worpen: O-goshi en O-soto gari. Aanvallen: Boerenhoek, 45 slag stok, omvatting achter (o-goshi), omvatting zijkant als 2e van 3e (o-soto gari) en pakking bij rever", theme: 3 },
+      { front: "Thema 3, Meervoudigheid Klemmen", back: "Klemmen: Ude garami en hara gatame (onderlangs doortrekken). Aanvallen: Boerenhoek, 45 slag stok, omvatting voorkant en pakking rever.", theme: 3 },
+      { front: "Thema 3, Meervoudigheid Wurging", back: "Wurging: Tate hadaka jime (hand er tussen). Aanvallen: Boerenhoek, 45 slag stok, omvatting voorkant en Pakking rever", theme: 3 },
+      //Thema 4
+      {front: "Thema 4, Nieuw aan te leren technieken: Demonstreer Uchi-Mata ", back: "let op: Zwaaibeen hoog tussen de benen. Bij het instappen, zwaaibeen wordt ingehaald door stabeen. Let op: knie tegen bovenbeen uke zodat hij stap achteruit zet. Vooranval: uraken Aanval: hoek met rechts Atemi: tetsui 45° op hoofd (kiai?) Eindtechniek terplekke bedenken (Pak met rechts om nek/middel maak.)", theme: 4},
+		  {front: "Thema 4, Nieuw aan te leren technieken: Demonstreer Mae Kata Ashi Dori ", back: "Vooraanval: Mae geri met rechts Aanval: uke pakt bij de keel beide handen (linker been voor), Tori slaat beiden weg en duwt weg, uke doet 1 stap naar achteren. Maak kata ashi dori (knie enkel druk).", theme: 4},
+		  {front: "Thema 4, Nieuw aan te leren technieken: Demonstreer Kata Garuma", back: "Vooraanval: shuto (missen) aanval: uraken Morote blok, uraken in zij Kata garuma klem op de grond", theme: 4},
+		  {front: "Thema 4, Nieuw aan te leren technieken: Demonstreer Ko Uchi Maki Komi", back: "Vooraanval: links tsuki Aanval: boeren hoek, dubbel blok + counter oeraken, maak ko uchi maki komi (binnenwaartse beenworp met meevallen) afmaken met empi in maag + oeraken op kin. ", theme: 4},
+		  {front: "Thema 4, Nieuw aan te leren technieken: Demonstreer Maki Tomoe", back: "Vooraanval: mae geri Let op: voet schuin op lies zetten + uke dichtbij houden en meerollen. Aanval: Duwen.", theme: 4},
+		  {front: "Thema 4, Nieuw aan te leren technieken: Demonstreer Tobi Kani Basami", back: "Vooraanval: yoko geri Aanval: oeraken, dubbel blok, oeraken terug en vasthouden + tobi kani bazami", theme: 4},
+//Thema 5      
+      { front: "", back: "", theme: 5 },
+//Thema 6      
+      {front: "Demonstreer 1 aanvalscombinatie", back: "Stoten: Tsuki links, tsuki rechts, pak met beide handen aan rever en geef knie, Worp Mels: Heupworp met rechter arm over de schouder pakkend bij de band., Worp Jitse: Schouderworp, Controle: Trap in de rug, naar buik draaien, hiza gatame(?)", theme: 6},
+//Thema 7
+      { front: "", back: "", theme: 7 },
+//Thema 8
+{front: "Demonstreer Overnames tegen 2 worpen", back: "Tori valt aan. 1. Aanval: Tastsui. Uke blokt gekruisd, gaat door naar Ogoshi. Tori maakt duidelijk Hara en gaat naar bananenschil, valt hierbij goed op zij en niet naar achteren. 2. Aanval: Shuto, Uke blokt en zet shio nage in. Tori draait snel mee, maakt met links een empi tegen de ribben van uke en gaat naar kata getame, gevolgd door kub getame.", theme: 8},
+		{front: "Demonstreer overnames tegen 2 klemmen", back: "Tori valt aan. 1. Aanval: shuto. Uke blokt en gaat naar wokkel. Tori draait snel en geeft empi op achterhoofd/bovenrug van uke. Tori gaat stevig staan en maakt nekklem. 2. Aanval: Uraken. Uke blokt en gaat naar bokkenpoot. Tori geeft met links een stoot op het bovenbeen van uke. Tori trekt uke met een stap (rechter hand klaar voor ude gerami, linkerhand erbij voor meer sturing) mee voordat hij naar de ude gerami gaat.", theme: 8},
+		{front: "Demonstreer overnames tegen 1 verwurging", back: "Tori valt aan. 1. Aanval: Uraken. Uke blokt een gaat naar hadaka jime. Tori geeft empi en draait weg (voor empi geven goed doorzakken), geeft hierbij druk met de schouder. Arm overpakken naar zadelhand en naar de grond drukken.", theme: 8},
+//Thema 9
+      { front: "", back: "", theme: 9 },
+      { front: "Thema 9, Opbreng/transporteren: Demonstreer staand.", back: "1. Aanval: Tetsui, Blokkering: Gekruist blok, Verdediging: Kubi gatame. 2. Aanval: Shuto, Blokkering: Dubbelblok, Verdediging: Voorlangs trekken, kanuki gatame. 3. Aanval: Uraken, Blokkering: Dubbelblok, Verdediging: Bokkenpoot.", theme: 9 },
+      { front: "Thema 9, Opbreng/transporteren: Demonstreer Liggend", back: "Aanval: Pakken en slaan, Verdediging: Schouder/heupworp, Uke gaat op buik liggen, Atemi: Knie in zij + speekselklierdruk, Opbrenggreep: Ude garami", theme: 9 },
+      { front: "Thema 9, Opbreng/transporteren: Demonstreer Zittend", back: "Uke gaat op de grond zitten, Atemi: pak met beide handen bij de kin speekselklieren. Opbrenggreep: Uke doet handen omhoog om speekselklier klem weg te houden, tori pakt beide armen naar achter de rug, en dan pak je het over naar 1 hand. Trek over omhoog.", theme: 9 },
+//Thema 10
+      {front: "Verdedig tegen de eerste 3 van 6 pakkingen van de basisaanvallen met vooraanval", back: "1. Vooraanval: trap in de maag, binnenkant uitkomen Aanval: pols/ onderarm gepakt met twee handen Verdediging: Kuzure kote gaeshi, daarna over naar normale kote gaeshi Einde: Osae ude hishigi gatame. 2. Vooraanval: linker tetsui Aanval: rever gepakt met een handVerdediging: met links pak je de pols vast, taiso naar het hoofd, kote gaeshi Einde: trap met rechts in de rug en stap er overheen, gestrekte armklem 3.Vooraanval: stoot naar de maag Aanval: wurging van voren Verdediging: wegslaan als in 3e van 1e, knie/opstoot in maag heupworp Einde: Kantelen met arm over de knie, gestrekte armklem met knie op schouder.", theme: 10},
+		  {front: "Verdedig tegen de laatste 3 van 6 pakkingen van de basisaanvallen met vooraanval", back: "4. Vooraanval: trap naar de knie zodat tori omdraait Aanval: wurging van achteren Verdediging: pak rechterhand met links. Uraken met rechts en draai om onderarm door Einde: ude osae, hiza gatame op de grond 5. Vooraanval: trap naar de knie zodat tori omdraait Aanval: wurging van opzij Verdediging: Pak voorste hand van uke met verste hand. Dichtstbijzijnde hand geeft empi. Einde: Draai naar waki getame (variant met meer afstand) en breng naar de grond. 6. Vooraanval: boeren hoek met links (tori morote uke) en dan met rechts schouder pakken Aanval: kleding gepakt op de schouder Verdediging: uraken naar hoofd, soto ude gerami, aanzetten met gestrekte arm pakken bij pak van uke, dan klem verzwakken en taiso op hoofd, o soto gari Einde: kuzure ude hishigi juji gatame", theme: 10},
+		  {front: "Verdedig tegen de eerste 3 van 7 omvattingen van de basisaanvallen met vooraanval", back: "1.Vooraanval: shuto Aanval: Van voren niet ingesloten Verdediging: Hiza geri, empi op achterhoofd Einde: windmolen 2. Vooraanval: mae geri, gedan barai Aanval: Van voren ingesloten Verdediging: weet niet Einde: Sutemi, achteruitrol 3. Vooraanval: trap in de knie zodat tori omdraait Aanval: Van achteren niet ingesloten Verdediging: Kopstoot, losdrukken, onderdoor naar kote heneri Einde: Vanuit kote heneri naar ude osea gatame ", theme: 10},
+		  {front: "Verdedig tegen de tweede 3 van 7 omvattingen van de basisaanvallen met vooraanval", back: "4. Vooraanval: Trap in de knie zodat tori omdraait  Aanval: Van achteren ingesloten Verdediging:  Linker voet trapt op linker voet van uke, empi in de maag, vuist in de kruis, elleboog omhoog naar de kin Einde: Omdraaien en  Uchi mata, op de grond een bokkenpoot 5. Vooraanval: stoot in de maag Aanval: Hoofd van rechter zijkant (hoofdaanval naast) Verdediging: empi in de maag, suki nage Einde: Voet op andere been om tegen te houden en dan een voet klem 6. Vooraanval: Hiza geri Aanval: Hoofd van voorkant Mels: Verdediging: Stoot in de maag, knie, inzetten voor heupworp Einde: Pakt arm vast, vouwt dubbel met eigen rechter onderarm er tussen. Dan optillen (beetje) Jitse: Verdediging: Stoot in maag, Rechtsom wegdraaien, molenworp Einde: Dichtbij blijven, hadaka jime", theme: 10},
+		  {front: "Verdedig tegen de laatse van  7 omvattingen van de basisaanvallen met vooraanval", back: "7. Vooraanval: linker boeren hoek, tori blokt. Gaat met rechts om de nek heen en achterlangs naar de aanval Aanval: Hoofd van achterkant Mels: Verdediging: rechter empi in de maag, gyaku o goshi Einde: schop in de rug en stap er overheen en gestrekte armklem Jitse: Verdediging: linker empi in de maag, schouderworp Einde: kanteltechniek op de knie ", theme: 10},
+		  {front: "Verdedig tegen de eerste 3 van 6 stoten en trappen van de basisaanvallen met vooraanval", back: "1. Vooraanval: links stoot naar het hoofd Aanval: rechter vuiststoot naar het hoofd Verdediging: inkomen met elleboog vooruit, taiso naar hoofd, met ko soto gake (meevallen) Einde: wurging 2. Vooraanval: mae geri Aanval: rechte vuiststoot naar de buik (met rechts) Verdediging: Gedan barai, inside uitkomen, oeraken in buik naar schouderworp. Einde: Kantelen als in 4e van 1e eindklem. 3. Vooraanval: boeren hoek Aanval: opstoot naar de kin Verdediging: neerwaarts vallend blok met links op de opstoot, rechts pakt bij voor een shio nage Einde: pols klem op de grond", theme: 10},
+		  {front: "Verdedig tegen de laatse 3 van 6 stoten en trappen van de basisaanvallen met vooraanval", back: "4. Vooraanval: boeren hoek met links (tori morote uke) Aanval: hoekstoot naar het hoofd met rechts Verdediging: Enkel blok op de recher hoek, soto ude gerami, aanzetten met gestrekte arm pakken bij pak van uke, dan klem verzwakken en taiso op hoofd, o soto gari Einde: kuzure ude hishigi juji gatame 5. Vooraanval: rechte stoot Aanval: voorwaartse schop (mae geri) Verdediging: gedan barai binnen uitkomen, empi in de maag, tetsui in de piep empi omhoog naar de kin, ko uchi maki komi (meevallen) Einde: bokkenpoot 6. Vooraanval: mae geri Aanval: horizontale ronde voorwaartse schop (mawashi geri) Verdediging: morote uke op het bovenbeen, empi in de maag, heupworp met zwaaibeen Einde: kuzure ude hishigi juji getame", theme: 10},
+//Thema 11
+      { front: "", back: "", theme: 11 },
+//Thema 12
+      {front: "Verdedig tegen 1 vrij aanvallende ongewapende aanvaller", back: "Succes!", theme: 12},
+		  {front: "Verdedig tegen 1 vrij aanvallende met mes gewapende aanvaller", back: "Succes!", theme: 12},
+		  {front: "Verdedig tegen 1 vrij aanvallende met stok gewapende aanvaller", back: "Succes!", theme: 12},
+		  {front: "Verdedig tegen 2 vrij aanvallende ongewapende aanvallers", back: "Succes!", theme: 12},
     ];
 
     const cardElement = document.getElementById('card');
